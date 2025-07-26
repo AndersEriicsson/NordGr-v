@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+  <header class="sidebar">
     <a href="#home" class="logo">NordGräv AB</a>
     <nav>
       <button class="tab-btn active" data-tab="home">Hem</button>
@@ -20,10 +20,12 @@
     </nav>
   </header>
   <section class="hero">
-    <a href="#home" class="hero-logo">
-      <img src="images/NordGrav_Logga.png" alt="NordGräv AB logga" />
-    </a>
-    <p class="slogan">Vi gräver fram rätt lösning – snabbt, tryggt och prisvärt.</p>
+    <div class="hero-inner">
+      <a href="#home" class="hero-logo">
+        <img src="images/NordGrav_Logga.png" alt="NordGräv AB logga" />
+      </a>
+      <p class="slogan">Vi gräver fram rätt lösning – snabbt, tryggt och prisvärt.</p>
+    </div>
   </section>
   <main class="container">
     <section id="home" class="active">
@@ -55,11 +57,7 @@
         <div class="field-group"><label for="tidigare">Tidigare arbete utfört?</label><select id="tidigare" name="tidigare" required><option>Ja</option><option>Nej</option></select></div>
         <div class="field-group"><label for="marktTyp">Typ av mark</label><select id="marktTyp" name="marktTyp" required><option>Gräsmatta</option><option>Grus</option><option>Jord</option><option>Berg</option><option>Blandat</option></select></div>
         <div class="field-group"><label for="lutning">Lutning</label><select id="lutning" name="lutning" required><option>Plan</option><option>Lätt lutning</option><option>Brant</option></select></div>
-
-
-
-
-
+@@ -64,40 +65,40 @@
           <input type="file" id="imageUpload" name="bilder[]" accept="image/*" multiple aria-label="Ladda upp bilder">
         </label>
         <div class="file-list" id="fileList">Inga filer valda</div>
@@ -97,7 +95,6 @@
     </section>
   </main>
   <footer>&copy; 2015-<span id="year"></span> NordGräv AB</footer>
-  <script src="app.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
