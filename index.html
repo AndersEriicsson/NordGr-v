@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MARKOFFERT</title>
+  <title>NordGräv AB</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 </head>
 <body>
   <header>
-    <a href="#home" class="logo">MARKOFFERT</a>
+    <a href="#home" class="logo">NordGräv AB</a>
     <nav>
       <button class="tab-btn active" data-tab="home">Hem</button>
       <button class="tab-btn" data-tab="offert">Offert</button>
@@ -21,16 +21,15 @@
   </header>
   <section class="hero">
     <a href="#home" class="hero-logo">
-      <img src="MarkOffert_Logga_300px.png" alt="MarkOffert logga" />
+      <img src="images/NordGrav_Logga.png" alt="NordGräv AB logga" />
     </a>
+    <p class="slogan">Vi gräver fram rätt lösning – snabbt, tryggt och prisvärt.</p>
   </section>
   <main class="container">
     <section id="home" class="active">
-      <h1>Välkommen till MARKOFFERT</h1>
-      <p>Välkommen till MARKOFFERT – din partner för markarbeten<br>
-      Behöver du en tydlig och konkurrenskraftig offert på markarbeten? Vi på MARKOFFERT hjälper dig att snabbt och enkelt få en överblick över kostnader och lösningar för ditt projekt – oavsett om det gäller dränering, schaktning, grundläggning eller trädgårdsplanering.<br>
-      Vår styrka ligger i att förstå dina behov och matcha dem med rätt entreprenörer och priser. Vi strävar alltid efter att ge dig en trygg start på ditt projekt, med korrekta kalkyler och professionell rådgivning.</p>
-      <h2>Varför välja MARKOFFERT?</h2>
+      <h1>Välkommen till NordGräv</h1>
+      <p>NordGräv AB gör markarbeten enklare och mer transparenta. Skapa din offert direkt och få en tydlig kostnadsbild. Vi utför dränering, schaktning, plattsättning och kabeldragning med fokus på kvalitet, säkerhet och hållbarhet.</p>
+      <h2>Varför välja NordGräv?</h2>
       <ul>
         <li>Snabba och detaljerade offerter</li>
         <li>Bred erfarenhet av alla typer av markarbeten</li>
@@ -56,11 +55,11 @@
         <div class="field-group"><label for="tidigare">Tidigare arbete utfört?</label><select id="tidigare" name="tidigare" required><option>Ja</option><option>Nej</option></select></div>
         <div class="field-group"><label for="marktTyp">Typ av mark</label><select id="marktTyp" name="marktTyp" required><option>Gräsmatta</option><option>Grus</option><option>Jord</option><option>Berg</option><option>Blandat</option></select></div>
         <div class="field-group"><label for="lutning">Lutning</label><select id="lutning" name="lutning" required><option>Plan</option><option>Lätt lutning</option><option>Brant</option></select></div>
-        <div class="field-group"><label for="maskinAtkomst">Maskinåtkomst</label><select id="maskinAtkomst" name="maskinAtkomst" required><option>Stor maskin</option><option>Liten maskin</option><option>Ingen maskin</option></select></div>
-        <div class="field-group"><label for="begransningar">Begränsningar</label><textarea id="begransningar" name="begransningar" rows="3" placeholder="Fri text"></textarea></div>
-        <h2>Ladda upp bilder</h2>
-        <label class="file-upload">
-          Klicka för att välja bilder
+
+
+
+
+
           <input type="file" id="imageUpload" name="bilder[]" accept="image/*" multiple aria-label="Ladda upp bilder">
         </label>
         <div class="file-list" id="fileList">Inga filer valda</div>
@@ -86,18 +85,19 @@
       <div class="confirmation" id="confirmationBox"></div>
     </section>
 
-    <section id="omoss">
-      <h1>Om oss</h1>
-      <p>MARKOFFERT är ett familjeägt företag sedan 2001. Vi skapar tydliga och rättvisa offerter för dränering, schaktning, plattläggning och mer.</p>
+    <section id="omoss">␊
+      <h1>Om oss</h1>␊
+      <p>NordGräv AB startades 2015 av tre entreprenörer i Norrland med ett gemensamt mål: att göra markarbeten enklare och mer transparenta. Med vårt digitala verktyg kan du själv bygga en offert baserad på dina behov. Idag utför vi dränering, schaktning, plattsättning och kabeldragning med fokus på kvalitet, säkerhet och hållbarhet.</p>
     </section>
 
     <section id="info">
       <h1>GDPR & Kontakt</h1>
-      <p>Vi behandlar dina uppgifter säkert och delar dem aldrig utan ditt medgivande.</p>
-      <p>E-post: info@markoffert.se<br>Telefon: 070-123 45 67</p>
+      <p>Vi behandlar dina uppgifter säkert och delar dem aldrig utan ditt medgivande.</p>␊
+      <p>E-post: info@nordgrav.se<br>Telefon: 070-987 65 43</p>
     </section>
   </main>
-  <footer>&copy; 2001-<span id="year"></span> MARKOFFERT</footer>
+  <footer>&copy; 2015-<span id="year"></span> NordGräv AB</footer>
+  <script src="app.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
