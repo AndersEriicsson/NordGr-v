@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NordGräv AB</title>
+  <title>{{company_name}}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 </head>
 <body>
   <header class="topbar">
-    <a href="#home" class="logo">NordGräv AB</a>
+    <a href="#home" class="logo">{{company_name}}</a>
     <nav>
       <button class="tab-btn active" data-tab="home">Hem</button>
       <button class="tab-btn" data-tab="offert">Offert</button>
@@ -22,16 +22,16 @@
   <section class="hero">
     <div class="hero-inner">
       <a href="#home" class="hero-logo">
-        <img src="images/NordGrav_Logga.png" alt="NordGräv AB logga" />
+        <img src="images/NordGrav_Logga.png" alt="{{company_name}} logga" />
       </a>
-      <p class="slogan">Vi gräver fram rätt lösning – snabbt, tryggt och prisvärt.</p>
+      <p class="slogan">{{tagline}}</p>
     </div>
   </section>
   <main class="container">
     <section id="home" class="active">
-      <h1>Välkommen till NordGräv</h1>
-      <p>NordGräv AB gör markarbeten enklare och mer transparenta. Skapa din offert direkt och få en tydlig kostnadsbild. Vi utför dränering, schaktning, plattsättning och kabeldragning med fokus på kvalitet, säkerhet och hållbarhet.</p>
-      <h2>Varför välja NordGräv?</h2>
+      <h1>{{company_name}}</h1>
+      <p>{{company_name}} gör markarbeten enklare och mer transparenta. Skapa din offert direkt och få en tydlig kostnadsbild. Vi utför dränering, schaktning, plattsättning och kabeldragning med fokus på kvalitet, säkerhet och hållbarhet.</p>
+      <h2>Varför välja {{company_name}}?</h2>
       <ul>
         <li>Snabba och detaljerade offerter</li>
         <li>Bred erfarenhet av alla typer av markarbeten</li>
@@ -58,8 +58,6 @@
         <div class="field-group"><label for="marktTyp">Typ av mark</label><select id="marktTyp" name="marktTyp" required><option>Gräsmatta</option><option>Grus</option><option>Jord</option><option>Berg</option><option>Blandat</option></select></div>
         <div class="field-group"><label for="lutning">Lutning</label><select id="lutning" name="lutning" required><option>Plan</option><option>Lätt lutning</option><option>Brant</option></select></div>
 
-          <input type="file" id="imageUpload" name="bilder[]" accept="image/*" multiple aria-label="Ladda upp bilder">
-        </label>
         <div class="file-list" id="fileList">Inga filer valda</div>
         <h2>Kontaktuppgifter</h2>
         <div class="field-group"><label for="namn">Namn</label><input id="namn" type="text" name="namn" required></div>
@@ -85,16 +83,16 @@
 
     <section id="omoss">␊
       <h1>Om oss</h1>␊
-      <p>NordGräv AB startades 2015 av tre entreprenörer i Norrland med ett gemensamt mål: att göra markarbeten enklare och mer transparenta. Med vårt digitala verktyg kan du själv bygga en offert baserad på dina behov. Idag utför vi dränering, schaktning, plattsättning och kabeldragning med fokus på kvalitet, säkerhet och hållbarhet.</p>
+      <p>{{company_name}} startades 2015 av tre entreprenörer i Norrland med ett gemensamt mål: att göra markarbeten enklare och mer transparenta. Med vårt digitala verktyg kan du själv bygga en offert baserad på dina behov. Idag utför vi dränering, schaktning, plattsättning och kabeldragning med fokus på kvalitet, säkerhet och hållbarhet.</p>
     </section>
 
     <section id="info">
       <h1>GDPR & Kontakt</h1>
       <p>Vi behandlar dina uppgifter säkert och delar dem aldrig utan ditt medgivande.</p>␊
-      <p>E-post: info@nordgrav.se<br>Telefon: 070-987 65 43</p>
+      <p>E-post: {{email}}<br>Telefon: {{phone}}</p>
     </section>
   </main>
-  <footer>&copy; 2015-<span id="year"></span> NordGräv AB</footer>
+  <footer>&copy; 2015-<span id="year"></span> {{company_name}}</footer>
   <script src="app.js"></script>
 </body>
 </html>
