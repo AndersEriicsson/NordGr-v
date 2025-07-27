@@ -1,15 +1,13 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg-color: #5a5b3f;
-  --surface-color: #4e4f36;
-  --accent-color: #d9b35c;
+  --primary-color: {{primary_color}};
+  --secondary-color: {{secondary_color}};
+  --background-color: {{background_color}};
   --text-color: #ffffff;
-  --header-bg: #5a5b3f;
-  --card-color: #6b6c4b;
 }
 body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  background: var(--bg-color);
+  background: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
 }
@@ -21,7 +19,7 @@ header.topbar {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--header-bg);
+  background: var(--secondary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,8 +27,8 @@ header.topbar {
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
   z-index: 10;
 }
-header.topbar .logo {
-  color: var(--accent-color);
+header.topbar .logo {␊
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.5rem;
@@ -41,20 +39,20 @@ header.topbar nav {
   justify-content: center;
   margin-top: 20px;
 }
-header.topbar nav button {
-  background: transparent;
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
+header.topbar nav button {␊
+  background: transparent;␊
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
-header.topbar nav button.active,
-header.topbar nav button:hover {
-  background: var(--accent-color);
-  color: var(--bg-color);
+header.topbar nav button.active,␊
+header.topbar nav button:hover {␊
+  background: var(--primary-color);
+  color: var(--background-color);
 }
 .hero {
   margin-top: 3.5rem;
@@ -73,10 +71,10 @@ header.topbar nav button:hover {
   height: auto;
   margin-bottom: 1rem;
 }
-.slogan {
-  font-size: 1.4rem;
-  color: var(--accent-color);
-  font-weight: 600;
+.slogan {␊
+  font-size: 1.4rem;␊
+  color: var(--primary-color);
+  font-weight: 600;␊
 }
 .container {
   max-width: 900px;
@@ -86,7 +84,7 @@ header.topbar nav button:hover {
 section {
   display: none;
   padding: 2rem 1rem;
-  background: var(--surface-color);
+  background: var(--secondary-color);
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
   margin-bottom: 2rem;
@@ -113,13 +111,13 @@ ul {
   padding: 0;
 }
 ul li {
-  background: var(--card-color);
+  background: var(--secondary-color);
   margin: 0.5rem 0;
   padding: 0.75rem;
   border-radius: 8px;
 }
 form {
-  background: var(--card-color);
+  background: var(--secondary-color);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
@@ -152,9 +150,9 @@ form {
 }
 .task-row select { flex: 2; }
 .task-row input { flex: 1; }
-button.primary {
-  background: var(--accent-color);
-  color: var(--bg-color);
+button.primary {␊
+  background: var(--primary-color);
+  color: var(--background-color);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -163,14 +161,14 @@ button.primary {
   transition: background 0.2s;
   margin-top: 0.5rem;
 }
-button.primary:hover {
-  background: #c9a74d;
-}
+button.primary:hover {␊
+  background: var(--primary-color);
+}␊
 #priceEstimate {
   margin-top: 1rem;
   font-size: 1.1rem;
   font-weight: bold;
-  color: var(--accent-color);
+  color: var(--primary-color);
 }
 #priceAfterDeduction {
   margin-top: 0.5rem;
@@ -179,8 +177,8 @@ button.primary:hover {
   color: var(--text-color);
 }
 .confirmation {
-  background: var(--accent-color);
-  color: var(--bg-color);
+  background: var(--primary-color);
+  color: var(--background-color);
   padding: 1rem;
   border-radius: 8px;
   margin-top: 1rem;
@@ -188,7 +186,7 @@ button.primary:hover {
 }
 .file-upload {
   background: #2c2c2c;
-  border: 2px dashed var(--accent-color);
+  border: 2px dashed var(--primary-color);
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
@@ -197,13 +195,13 @@ button.primary:hover {
   transition: border-color 0.3s;
 }
 .file-upload:hover {
-  border-color: #c9a74d;
+  border-color: var(--primary-color);
 }
 .file-upload input { display: none; }
 .file-list {
   margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: var(--accent-color);
+  color: var(--primary-color);
 }
 @keyframes fade {
   from { opacity: 0; transform: translateY(10px); }
