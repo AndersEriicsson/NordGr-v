@@ -41,6 +41,32 @@
 
     <section id="offert">
       <h1>Offertförfrågan</h1>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Tjänst</th>
+            <th>Beskrivning</th>
+            <th>Pris (inkl. moms)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Grävning Bas</td>
+            <td>Upp till 20 m² schaktarbete</td>
+            <td>4 995 kr</td>
+          </tr>
+          <tr>
+            <td>Dränering</td>
+            <td>Komplett dräneringsarbete runt villa</td>
+            <td>12 495 kr</td>
+          </tr>
+          <tr>
+            <td>Plattläggning</td>
+            <td>Inklusive markförberedelse</td>
+            <td>9 995 kr</td>
+          </tr>
+        </tbody>
+      </table>
       <form id="offerForm">
         <div id="tasks">
           <div class="task-row">
@@ -58,6 +84,8 @@
         <div class="field-group"><label for="marktTyp">Typ av mark</label><select id="marktTyp" name="marktTyp" required><option>Gräsmatta</option><option>Grus</option><option>Jord</option><option>Berg</option><option>Blandat</option></select></div>
         <div class="field-group"><label for="lutning">Lutning</label><select id="lutning" name="lutning" required><option>Plan</option><option>Lätt lutning</option><option>Brant</option></select></div>
 
+          <input type="file" id="imageUpload" name="bilder[]" accept="image/*" multiple aria-label="Ladda upp bilder">
+        </label>
         <div class="file-list" id="fileList">Inga filer valda</div>
         <h2>Kontaktuppgifter</h2>
         <div class="field-group"><label for="namn">Namn</label><input id="namn" type="text" name="namn" required></div>
