@@ -1,20 +1,20 @@
 "use strict";
 
 const arbeten = [
-  { name: "Kantsten", price: 1000, unit: "m" },
-  { name: "Marksten", price: 800, unit: "m²" },
-  { name: "Dränering", price: 600, unit: "m" },
-  { name: "Schakt/grävning", price: 300, unit: "m³" },
-  { name: "Asfaltering", price: 900, unit: "m²" },
-  { name: "Plattläggning", price: 700, unit: "m²" },
-  { name: "Fyllnadsmaterial", price: 500, unit: "ton" },
-  { name: "Jordutbyte", price: 350, unit: "m³" },
-  { name: "Rörläggning", price: 650, unit: "m" },
-  { name: "Markbelysning", price: 1200, unit: "punkt" },
-  { name: "Stödmur", price: 1500, unit: "m" },
-  { name: "Trappa", price: 900, unit: "steg" },
-  { name: "Kabelgrävning", price: 400, unit: "m" },
-  { name: "Markrensning", price: 500, unit: "timme" }
+  { name: "{{service_name_1}}", price: {{service_price_1}}, unit: "{{service_unit_1}}" },
+  { name: "{{service_name_2}}", price: {{service_price_2}}, unit: "{{service_unit_2}}" },
+  { name: "{{service_name_3}}", price: {{service_price_3}}, unit: "{{service_unit_3}}" },
+  { name: "{{service_name_4}}", price: {{service_price_4}}, unit: "{{service_unit_4}}" },
+  { name: "{{service_name_5}}", price: {{service_price_5}}, unit: "{{service_unit_5}}" },
+  { name: "{{service_name_6}}", price: {{service_price_6}}, unit: "{{service_unit_6}}" },
+  { name: "{{service_name_7}}", price: {{service_price_7}}, unit: "{{service_unit_7}}" },
+  { name: "{{service_name_8}}", price: {{service_price_8}}, unit: "{{service_unit_8}}" },
+  { name: "{{service_name_9}}", price: {{service_price_9}}, unit: "{{service_unit_9}}" },
+  { name: "{{service_name_10}}", price: {{service_price_10}}, unit: "{{service_unit_10}}" },
+  { name: "{{service_name_11}}", price: {{service_price_11}}, unit: "{{service_unit_11}}" },
+  { name: "{{service_name_12}}", price: {{service_price_12}}, unit: "{{service_unit_12}}" },
+  { name: "{{service_name_13}}", price: {{service_price_13}}, unit: "{{service_unit_13}}" },
+  { name: "{{service_name_14}}", price: {{service_price_14}}, unit: "{{service_unit_14}}" }
 ];
 
 function populate(select) {
@@ -40,97 +40,6 @@ function calculatePrice() {
       parseFloat(sel.selectedOptions[0].getAttribute("data-price")) || 0;
     const qty = parseFloat(inp.value.replace(",", ".")) || 0;
     total += price * qty;
-  });
-
-  const priceEstimate = document.getElementById("priceEstimate");
-  if (total === 0) {
-    priceEstimate.textContent = "Uppskattat totalpris visas här...";
-    if (priceAfter) priceAfter.textContent = "";
-  } else {
-    const min = Math.round(total * 0.9);
-    const max = Math.round(total * 1.1);
-    priceEstimate.textContent =
-      `Uppskattat pris: ca ${min.toLocaleString("sv-SE")}` +
-      `–${max.toLocaleString("sv-SE")} kr`;
-    if (deductionSelect) {
-      let rate = 0;
-      if (deductionSelect.value === "rot") rate = 0.3;
-      if (deductionSelect.value === "rut") rate = 0.5;
-      if (rate > 0) {
-        const minAfter = Math.round(min * (1 - rate));
-        const maxAfter = Math.round(max * (1 - rate));
-        priceAfter.textContent =
-          `Efter avdrag: ca ${minAfter.toLocaleString("sv-SE")}` +
-          `–${maxAfter.toLocaleString("sv-SE")} kr`;
-      } else {
-        priceAfter.textContent = "";
-      }
-    }
-  }
-}
-
-document.getElementById("tasks").addEventListener("input", calculatePrice);
-document.getElementById("tasks").addEventListener("change", calculatePrice);
-
-const deductionSelect = document.getElementById("deduction");
-const priceAfter = document.getElementById("priceAfterDeduction");
-if (deductionSelect) {
-  deductionSelect.addEventListener("change", calculatePrice);
-}
-
-function createTaskRow() {
-  const row = document.createElement("div");
-  row.className = "task-row";
-  const sel = document.createElement("select");
-  sel.name = "jobbTyp[]";
-  const first = document.createElement("option");
-  first.value = "";
-  first.textContent = "— Välj arbetstyp —";
-  sel.appendChild(first);
-  populate(sel);
-  const inp = document.createElement("input");
-  inp.type = "text";
-  inp.name = "jobbMängd[]";
-  inp.placeholder = "Mängd/enhet";
-  row.append(sel, inp);
-  return row;
-}
-
-document.getElementById("addTask").addEventListener("click", () => {
-  const tasks = document.getElementById("tasks");
-  tasks.appendChild(createTaskRow());
-  calculatePrice();
-});
-
-const imageUpload = document.getElementById("imageUpload");
-const fileList = document.getElementById("fileList");
-imageUpload.addEventListener("change", () => {
-  if (imageUpload.files.length === 0) {
-    fileList.textContent = "Inga filer valda";
-  } else {
-    const names = Array.from(imageUpload.files)
-      .map(f => f.name)
-      .join(", ");
-    fileList.textContent = "Valda filer: " + names;
-  }
-});
-
-document.getElementById("offerForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const offerId = "OFFERT-" + Date.now();
-  document.getElementById("confirmationBox").textContent =
-    `Din offertförfrågan (ID: ${offerId}) har skickats.`;
-  document.getElementById("confirmationBox").style.display = "block";
-  e.target.reset();
-  const tasks = document.getElementById("tasks");
-  tasks.innerHTML = "";
-  tasks.appendChild(createTaskRow());
-  document.getElementById("priceEstimate").textContent =
-    "Uppskattat totalpris visas här...";
-  if (priceAfter) priceAfter.textContent = "";
-  fileList.textContent = "Inga filer valda";
-});
-
 document.querySelectorAll(".tab-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document
